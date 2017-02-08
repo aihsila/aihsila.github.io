@@ -3,18 +3,18 @@
 
 @font-face{
 	font-family: fineliner;
-	src: url(fineliner_script.otf);
+	src: url(Fineliner_Script.otf);
 }
 
 @font-face{
     font-family: bringshoot;
-    src: url('bringshoot.eot') 
+    src: url('Bringshoot.eot') 
 }
 
 
 @font-face{
 	font-family: bringshoot;
-	src: url(bringshoot.otf);
+	src: url(Bringshoot.otf);
 }
 
 body{
