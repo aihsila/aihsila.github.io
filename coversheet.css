@@ -3,12 +3,12 @@
 
 @font-face{
 	font-family: cabin;
-	src:url(Cabin-Bold.ttf);
+	src:url('Cabin-Bold.ttf');
 }
 
 @font-face{
 	font-family: bringshoot;
-	src:url(Bringshoot.ttf);
+	src:url('Bringshoot.ttf');
 }
 
 body{
