@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<meta name="description" content="Design. Photography. Graphics.">
+<link 	rel="icon"
+		type="image/png"
+        href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>  
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<title>Alishia.ca | Graphics</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+//Thanks to http://www.kylejlarson.com/blog/2012/creating-retina-images-for-your-website/ and http://css-tricks.com/snippets/css/media-queries-for-standard-devices/-->
+$(document).ready(function() {
+
+if(window.devicePixelRatio >=1.331 && $(window).width() < 600){
+        $("h5").css("font-size","22px");
+}
+	if(window.devicePixelRatio >= 1.331 && $(window).width() > 600){
+		var images = $('img.displayed');
+		for(var i=0; i<images.length; i++){
+			var imageType = images[i].src.substr(-4);
+			var imageName = images[i].src.substr(0, images[i].src.length - 4);
+			imageName += "@2x" + imageType;
+			images[i].src = imageName; 
+			}
+	}
+	
+	$("#navbox").click(function(){
+		$("#mpanel").css("display","visible");
+		$("#mpanel").slideToggle(800);
+	});
+	
+	$(window).resize(function(){
+		if($("#social").css("display","inline")){
+		$("#mpanel").css("display","none");
+		}	
+	});
+});
+
+//Thanks to http://webdesignerwall.com/tutorials/iphone-safari-viewport-scaling-bug /-->
+(function(doc) {
+	var addEvent = 'addEventListener',
+	    type = 'gesturestart',
+	    qsa = 'querySelectorAll',
+	    scales = [1, 1],
+	    meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+	function fix() {
+		meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+		doc.removeEventListener(type, fix, true);
+	}
+
+	if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+		fix();
+		scales = [.25, 1.6];
+		doc[addEvent](type, fix, true);
+	}
+}(document));
+</script>
+</head>
+
+<body>
+<!--This is the main container for the website -->
+<div id="container">
+    <!--Mobile nav-->
+    <div id="menuheader">
+    <div id="navtitle"><a href="index.html">Alishia.ca</a> | <h5>Graphics</h5></div>
+	<img id="navbox" src="navbox.png" height="20px">
+	</div>
+
+    <div id="mpanel">
+    <a id="homepanel" href="index.html">Home</a><br>
+    <a id="photospanel" href="photos.html">Photos</a><br>
+    <a id="graphicspanel" href="graphics.html">Graphics</a><br>
+    </div>
+    
+    	<!--Main nav for web, tablets-->
+	<div id="navmain">
+    <div id="colboxo">
+        
+    </div>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="graphics.html" class="navsel">Graphics</a></li>
+        </ul>
+      
+        
+     <div id="social">
+         <div id="title">
+         <strong><a href="index.html"><img src="alishiawebsite.png" width="225px" onMouseOver="this.src='alishiacablue.png'" onMouseOut="this.src='alishiawebsite.png'"/></a><h6>alishia.h@hotmail.com</h6></strong>
+         </div>
+          <div id="socicons">
+        <img class="socialnav" src="mailbox.png" onClick="redirect(1)" onMouseOver="this.src='mailboxsolid.jpg'" onMouseOut="this.src='mailbox.png'"/>
+        <img class="socialnav" src="twitterbird.png" onClick="redirect(2)" onMouseOver="this.src='twitterblue.png'" onMouseOut="this.src='twitterbird.png'"/>
+        <img class="socialnav" src="Facebook.png" onClick="redirect(3)" onMouseOver="this.src='FacebookBlue.png'" onMouseOut="this.src='Facebook.png'"/>
+</div>
+    </div>
+    
+    </div>
+    
+	<div class="sliderg" id="slider">
+    
+       <ul id="galleryg">   
+       <input type="radio" name="radio-btn" id="img-1" /checked>
+       <div class="slidecontainer">
+       <li class="slides" id="Graphics">           
+          	<div id="g1">
+            <a href="#graphics1" tabindex="-500"><img class="slider" src="Graphics/G1.jpg" width="550px"></a>
+                                    
+             <a href="#_" class="lightbox" id="graphics1"><img class="displayed" src="Graphics/G1.jpg" width="550px" ></a>
+          </div>
+            
+            <div id="g2">
+            <a href="#graphics2" tabindex="-500"><img class="slider" src="Graphics/G2.jpg" width="400px"></a>
+                                    
+             <a href="#_" class="lightbox" id="graphics2"><img class="displayed" src="Graphics/G2.jpg" width="550px" ></a>
+             </div>
+            
+            <div id="g3">
+            <a href="#graphics3" tabindex="-500"><img class="slider" src="Graphics/G3.jpg" width="460px"></a>
+                                    
+             <a href="#_" class="lightbox" id="graphics3"><img class="displayed" src="Graphics/G3.jpg" width="550px"></a>
+             </div>
+            
+            <div id="g4">
+            <a href="#graphics4" tabindex="-500"><img class="slider" src="Graphics/G4.jpg" width="430px"></a>
+                                    
+            <a href="#_" class="lightbox" id="graphics4"><img class="displayed" src="Graphics/G4.jpg" width="550px"></a>
+            </div>
+            
+            <div id="g5">
+            <a href="#graphics5" tabindex="-500"><img class="slider" src="Graphics/G5.jpg" width="440px"></a>
+                                    
+            <a href="#_" class="lightbox" id="graphics5"><img class="displayed" src="Graphics/G5.jpg" width="550px"></a>
+            </div>
+            
+            <div id="g6">
+            <a href="#graphics6" tabindex="-500"><img class="slider" src="Graphics/G6.jpg" width="500px"></a>
+                                        
+             <a href="#_" class="lightbox" id="graphics6"><img class="displayed" src="Graphics/G6.jpg" width="550px" ></a>
+            </div>
+            
+            <div id="g7">
+            <a href="#graphics7" tabindex="-500"><img class="slider" src="Graphics/G7.jpg" width="400px"></a>
+                                    
+            <a href="#_" class="lightbox" id="graphics7"><img class="displayed" src="Graphics/G7.jpg" width="550px"></a>
+             </div>
+            
+            <div id="g8">
+            <a href="#graphics8" tabindex="-500"><img class="slider" src="Graphics/G8.jpg" width="450px"></a>
+                                    
+             <a href="#_" class="lightbox" id="graphics8"><img class="displayed" src="Graphics/G8.jpg" width="550px"></a>
+             </div>
+            
+            <div id="g9">
+            <a href="#graphics9" tabindex="-500"><img class="slider" src="Graphics/G9.jpg" width="370px"></a>
+                                    
+            <a href="#_" class="lightbox" id="graphics9"><img class="displayed" src="Graphics/G9.jpg" width="550px"></a>  
+            </div>
+            
+            <div id="g10">
+            <a href="#graphics10" tabindex="-500"><img class="slider" src="Graphics/G10.jpg" width="420px"></a>
+                                    
+            <a href="#_" class="lightbox" id="graphics10"><img class="displayed" src="Graphics/G10.jpg" width="550px"></a>  
+            </div>
+ 
+          </li>      
+         </div> <!--End of first slide!-->
+        
+        </ul><!--Gallery-->
+   </div> <!--Slider--> 
+    
+   
+</div> <!--Container-->
+
+</body>
+<script>
+function redirect(number){
+	var given = number;
+	
+	if(given==1){
+		window.location.href = "mailto: alishia.h@hotmail.com";
+		$(document).ready(function(){
+			$("h6").css("opacity","1");
+			$("#title").css("margin-top","-8px")
+		});
+	}
+	
+	else if(given==2){
+		window.open("http://www.twitter.com/_aihsila")
+	}
+	else if(given==3){
+		window.open("http://www.facebook.com/alishiaphotog")
+	}
+	else{
+	}
+}
+
+</script>
+
+<script src="http://static.freewebs.getclicky.com/85260974.js" type="text/javascript"></script>
+<noscript><img alt="Clicky" src="http://in.freewebs.getclicky.com/85260974-fwdb2.gif" /></noscript>
+</html>

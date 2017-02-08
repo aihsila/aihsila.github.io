@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Design. Photography. Graphics.">
+<link 	rel="icon"
+		type="image/png"
+        href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>  
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<title>Alishia.ca</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+   if(document.title ="Alishia.ca"){
+$("body").css("overflow","hidden");
+$("body").css("ms-overflow-style","none");
+}
+	
+	if(window.devicePixelRatio >= 1.331 && $(window).width() > 600){
+		var images = $('img.displayed');
+		for(var i=0; i<images.length; i++){
+			var imageType = images[i].src.substr(-4);
+			var imageName = images[i].src.substr(0, images[i].src.length - 4);
+			imageName += "@2x" + imageType;
+			images[i].src = imageName; 
+			}
+	}
+
+if(window.devicePixelRatio >= 1.331 && $(window).width() > 1400 && $(window).width() < 1499){
+		var imagebkg = $('img.bkg');
+		for(var p=0; p<imagebkg.length; p++){
+			var imagebkgType = imagebkg[p].src.substr(-4);
+			var imagebkgName = imagebkg[p].src.substr(0, imagebkg[p].src.length - 4);
+			imagebkgName += "@x" + imagebkgType;
+			imagebkg[p].src = imagebkgName; 
+			}
+	}
+	
+	if($(window).width() >= 1499 && $(window).width() < 1999){
+		var imagebkg = $('img.bkg');
+		for(var p=0; p<imagebkg.length; p++){
+			var imagebkgType = imagebkg[p].src.substr(-4);
+			var imagebkgName = imagebkg[p].src.substr(0, imagebkg[p].src.length - 4);
+			imagebkgName += "@2x" + imagebkgType;
+			imagebkg[p].src = imagebkgName; 
+			}
+	}
+	
+	if($(window).width() >= 2000){
+		var imagebkg = $('img.bkg');
+		for(var p=0; p<imagebkg.length; p++){
+			var imagebkgType = imagebkg[p].src.substr(-4);
+			var imagebkgName = imagebkg[p].src.substr(0, imagebkg[p].src.length - 4);
+			imagebkgName += "@3x" + imagebkgType;
+			imagebkg[p].src = imagebkgName; 
+			}
+	}
+	
+	$("#navbox").click(function(){
+		$("#mpanel").css("display","visible");
+		$("#mpanel").slideToggle(800);
+	});
+	
+	$(window).resize(function(){
+		if($("#social").css("display","inline")){
+		$("#mpanel").css("display","none");
+		}	
+	});
+});
+</script>
+</head>
+
+<body>
+<!--This is the main container for the website -->
+<div id="container">
+    
+    <img class="bkg" src="MainBackground.jpg" width="1550px"/>
+    
+    <!--Mobile nav-->
+    <div id="menuheader">
+    <div id="navtitle"><a href="index.html">Alishia.ca</a></div>
+	<img id="navbox" src="navbox.png" height="20px">
+	</div>
+
+	<div id="mpanel">
+    <a id="homepanel" href="index.html">Home</a><br>
+    <a id="photospanel" href="photos.html">Photos</a><br>
+    <a id="graphicspanel" href="graphics.html">Graphics</a><br>
+	</div>
+    
+    <div id="msocial">
+    <img src="mailbox.png" onClick="redirect(1)" onMouseOver="this.src='mailboxsolid.jpg'" onMouseOut="this.src='mailbox.png'"/>
+    <img src="twitterbird.png" onClick="redirect(2)" onMouseOver="this.src='twitterblue.png'" onMouseOut="this.src='twitterbird.png'"/>
+    <img id="Facebook" src="Facebook.png" onClick="redirect(3)" onMouseOver="this.src='FacebookBlue.png'" onMouseOut="this.src='Facebook.png'"/>
+    </div>
+    
+    <!--Main nav for web, tablets-->
+	<div id="navmain">
+    <div id="colbox" class="ind">
+        
+    </div>
+        <ul>
+        <li><a href="index.html" class="navsel">Home</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="graphics.html">Graphics</a></li>
+        </ul>
+       <!-- <div id="title">
+        Alishia.ca
+        </div>-->
+        
+     <div id="social">
+         <div id="title">
+         <strong><a href="index.html"><img src="alishiawebsite.png" width="225px" onMouseOver="this.src='alishiacablue.png'" onMouseOut="this.src='alishiawebsite.png'"/></a><h6>alishia.h@hotmail.com</h6></strong>
+         </div>
+         
+ <div id="socicons">
+        <img class="socialnav" src="mailbox.png" onClick="redirect(1)" onMouseOver="this.src='mailboxsolid.jpg'" onMouseOut="this.src='mailbox.png'"/>
+        <img class="socialnav" src="twitterbird.png" onClick="redirect(2)" onMouseOver="this.src='twitterblue.png'" onMouseOut="this.src='twitterbird.png'"/>
+        <img class="socialnav" src="Facebook.png" onClick="redirect(3)" onMouseOver="this.src='FacebookBlue.png'" onMouseOut="this.src='Facebook.png'"/>
+    </div>
+</div>
+    
+    </div>
+</div>
+
+</body>
+
+<script>
+function redirect(number){
+	var given = number;
+	
+	if(given==1){
+		window.location.href = "mailto: alishia.h@hotmail.com";
+		$(document).ready(function(){
+			$("h6").css("opacity","1");
+			$("#title").css("margin-top","-8px")
+		});
+	}
+	
+	else if(given==2){
+		window.open("http://www.twitter.com/_aihsila")
+	}
+	else if(given==3){
+		window.open("http://www.facebook.com/alishiaphotog")
+	}
+	else{
+	}
+}
+
+</script>
+<script src="http://static.freewebs.getclicky.com/85260974.js" type="text/javascript"></script>
+<noscript><img alt="Clicky" src="http://in.freewebs.getclicky.com/85260974-fwdb2.gif" /></noscript>
+</html>

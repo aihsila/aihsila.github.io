@@ -1,0 +1,490 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<meta name="description" content="Design. Photography. Graphics.">
+<link 	rel="icon"
+		type="image/png"
+        href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>          
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<title>Alishia.ca | Photos</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+//Thanks to http://www.kylejlarson.com/blog/2012/creating-retina-images-for-your-website/ and http://css-tricks.com/snippets/css/media-queries-for-standard-devices/-->
+$(document).ready(function() {
+
+
+
+	
+if(window.devicePixelRatio >=1.331 && $(window).width() < 600){
+        $("h5").css("font-size","22px");
+	}
+	
+	if(window.devicePixelRatio >= 1.331 && $(window).width() > 600){
+		var images = $('img.displayed');
+		for(var i=0; i<images.length; i++){
+			var imageType = images[i].src.substr(-4);
+			var imageName = images[i].src.substr(0, images[i].src.length - 4);
+			imageName += "@2x" + imageType;
+			images[i].src = imageName; 
+			}
+	}
+	
+	if(window.devicePixelRatio >= 1.331 && $(window).height() < 450){
+		$(".lightbox img").css("width", "300px");
+	}
+	
+	$("#navbox").click(function(){
+		$("#mpanel").css("display","visible");
+		$("#mpanel").slideToggle(800);
+	});
+	
+	$(window).resize(function(){
+		if($("#social").css("display","inline")){
+		$("#mpanel").css("display","none");
+		}	
+
+if ($("#gallery").width() + 100 > $(window).width())
+ {
+
+$(".nav").css("opacity", "0");
+ }
+
+else{
+$(".nav").css("opacity", "0.35");
+}
+
+	});
+
+if ($("#gallery").width() + 100 > $(window).width())
+ {
+
+$(".nav").css("opacity", "0");
+ }
+
+else{
+$(".nav").css("opacity", "0.35");
+}
+
+		
+});
+
+//Thanks to http://webdesignerwall.com/tutorials/iphone-safari-viewport-scaling-bug /-->
+(function(doc) {
+	var addEvent = 'addEventListener',
+	    type = 'gesturestart',
+	    qsa = 'querySelectorAll',
+	    scales = [1, 1],
+	    meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+	function fix() {
+		meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+		doc.removeEventListener(type, fix, true);
+	}
+
+	if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+		fix();
+		scales = [.25, 1.6];
+		doc[addEvent](type, fix, true);
+	}
+}(document));
+</script>
+</head>
+
+<body id="photos">
+<!--This is the main container for the website -->
+
+<div id="container">
+    <!--Mobile nav-->
+    <div id="menuheader">
+        <div id="navtitle"><a href="index.html">Alishia.ca</a> | <h5>Photos</h5></div>
+        <img id="navbox" src="navbox.png" height="20px">
+        </div>
+    
+        <div id="mpanel">
+        <a id="homepanel" href="index.html">Home</a><br>
+        <a id="photospanel" href="photos.html">Photos</a><br>
+        <a id="graphicspanel" href="graphics.html">Graphics</a><br>
+        </div>
+       
+        <!--Main nav for web, tablets-->
+        <div id="navmain">
+        <div id="colboxo">
+            
+        </div>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photos.html" class="navsel">Photos</a></li>
+            <li><a href="graphics.html">Graphics</a></li>
+            </ul>
+          
+            
+         <div id="social">
+             <div id="title">
+             <strong><a href="index.html"><img src="alishiawebsite.png" width="225px" onMouseOver="this.src='alishiacablue.png'" onMouseOut="this.src='alishiawebsite.png'"//></a><h6>alishia.h@hotmail.com</h6></strong>
+             </div>
+             
+             <div id="socicons">
+            <img class="socialnav" src="mailbox.png" onClick="redirect(1)" onMouseOver="this.src='mailboxsolid.jpg'" onMouseOut="this.src='mailbox.png'"/>
+            <img class="socialnav" src="twitterbird.png" onClick="redirect(2)" onMouseOver="this.src='twitterblue.png'" onMouseOut="this.src='twitterbird.png'"/>
+            <img class="socialnav" src="Facebook.png" onClick="redirect(3)" onMouseOver="this.src='FacebookBlue.png'" onMouseOut="this.src='Facebook.png'"/>
+            </div>
+        </div>
+    </div>
+   
+	<div id="slider">
+    
+       <ul id="gallery">   
+       <input type="radio" name="radio-btn" id="img-1" /checked>
+       <div class="slidecontainer">
+       <li class="slides" id="Concerts">           
+          	<div id="c1">
+            <a href="#concerts1" tabindex="-500"><img class=		"slider" src="Concerts/C1.jpg" width="280px"></a>
+    
+             <a href="#_" class="lightbox" id="concerts1"><img class="displayed" src="Concerts/C1.jpg" width="550px" ></a>
+             </div>
+                                                   
+             <div id="c2">
+             <a href="#concerts2" tabindex="-500"><img class="slider" src="Concerts/c2.JPG" width="330px"></a>
+                                    
+              <a href="#_" class="lightbox" id="concerts2"><img class="displayed" src="Concerts/c2.jpg" width="550px" ></a>
+              </div>
+                                
+              <div id="c3">
+              <a href="#concerts3" tabindex="-500"><img class="slider" src="Concerts/c3.JPG" width="260px"></a>
+                                    
+              <a href="#_" class="lightbox" id="concerts3"><img class="displayed" src="Concerts/c3.jpg" width="550px"></a>
+              </div>
+                                
+              <div id="c4">
+              <a href="#concerts4" tabindex="-500"><img class="slider" src="Concerts/c4.jpg" width="280px"></a>
+                                    
+               <a href="#_" class="lightbox" id="concerts4"><img class="displayed" src="Concerts/C4.jpg" width="550px" ></a></div>
+                                
+               <div id="c5">
+               <a href="#concerts5" tabindex="-500"><img class="slider" src="Concerts/C5.jpg" width="292px"></a>
+                                    
+               <a href="#_" class="lightbox" id="concerts5"><img class="displayed" src="Concerts/C5.jpg" width="550px" ></a>
+               </div>
+                                
+               <div id="c6">
+               <a href="#concerts6" tabindex="-500"><img class="slider" src="Concerts/c6.jpg" width="300px"></a>
+                                    
+               <a href="#_" class="lightbox" id="concerts6"><img class="displayed" src="Concerts/c6.jpg" width="550px"></a>
+               </div>
+                                
+               <div id="c7">
+               <a href="#concerts7" tabindex="-500"><img class="slider" src="Concerts/c7.JPG" width="280px"></a>
+                                    
+               <a href="#_" class="lightbox" id="concerts7"><img class="displayed" src="Concerts/c7.jpg" width="550px" ></a>	</div>
+                                
+             <div id="c8">
+             <a href="#concerts8" tabindex="-500"><img class="slider" src="Concerts/c8.jpg" width="280px"></a>
+                                    
+              <a href="#_" class="lightbox" id="concerts8"><img class="displayed" src="Concerts/C8.jpg" width="550px"></a>
+               </div>
+                                
+                <div id="c9">
+                <a href="#concerts9" tabindex="-500"><img class="slider" src="Concerts/c9.jpg" width="320px"></a>
+                                    
+                <a href="#_" class="lightbox" id="concerts9"><img class="displayed" src="Concerts/c9.jpg" width="550px"></a>
+                </div>
+                                
+                 <div id="c10">
+                 <a href="#concerts10" tabindex="-500"><img class="slider" src="Concerts/c10.JPG" width="290px"></a>
+                                    
+                 <a href="#_" class="lightbox" id="concerts10"><img class="displayed" src="Concerts/c10.jpg" width="550px"></a>				</div>
+                                
+                <div id="c11">
+                <a href="#concerts11" tabindex="-500"><img class="slider" src="Concerts/c11.jpg" width="310px"></a>
+                                    
+                <a href="#_" class="lightbox" id="concerts11"><img class="displayed" src="Concerts/c11.jpg" width="550px"></a>				</div>
+                                
+                <div id="c12">
+                <a href="#concerts12" tabindex="-500"><img class="slider" src="Concerts/c12.jpg" width="260px"></a>
+                                    
+                <a href="#_" class="lightbox" id="concerts12"><img class="displayed" src="Concerts/c12.jpg" width="550px"></a>
+                </div>
+                                
+                <div id="c13">
+                <a href="#concerts13" tabindex="-500"><img  class="slider" src="Concerts/c13.jpg" width="400px"></a>
+                                    
+                <a href="#_" class="lightbox" id="concerts13"><img class="displayed" src="Concerts/c13.jpg" width="550px"></a>
+                </div>
+                                
+                <div id="c14">
+                <a href="#concerts14" tabindex="-500"><img  class="slider" src="Concerts/c14.jpg" width="360px"></a>
+                                    
+                <a href="#_" class="lightbox" id="concerts14"><img class="displayed" src="Concerts/c14.jpg" width="550px"></a>
+                </div>
+                                
+                <div id="c15">
+                <a href="#concerts15" tabindex="-500"><img  class="slider" src="Concerts/c15.jpg" width="280px"></a>
+                                    
+                <a href="#_" class="lightbox" id="concerts15"><img class="displayed" src="Concerts/c15.jpg" width="550px" ></a>
+               </div>
+                               
+                <div id="c16"><a href="#concerts16" tabindex="-500"><img  class="slider" src="Concerts/c16.jpg" width="242px"></a>
+                                    
+                <a href="#_" class="lightbox" id="concerts16"><img class="displayed" src="Concerts/c16.jpg" width="550px" ></a></div>
+          </li>      
+             <div class="nav">
+             <label for="img-3" class="prev">&#x2039;</label>
+             <label for="img-2" class="next">&#x203a;</label>
+             </div>
+         </div> <!--End of first slide!-->
+         
+        <input type="radio" name="radio-btn" id="img-2">
+        <div class="slidecontainer">
+        <li class="slides" id="scenic">
+            <div id="s1">
+            <a href="#scenic1" tabindex="-500"><img class="slider" src="Scenic/S1.jpg" width="190px"></a>
+                                        
+            <a href="#_" class="lightboxv" id="scenic1"><img class="displayed" src="Scenic/S1.jpg" width="367px"></a>
+ </div>
+                                
+            <div id="s2">
+            <a href="#scenic2" tabindex="-500"><img class="slider" src="Scenic/S2.jpg" width="415px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic2"><img class="displayed" src="Scenic/S2.jpg" width="550px"></a>
+             </div>
+                                
+             <div id="s3">
+             <a href="#scenic3" tabindex="-500"><img class="slider" src="Scenic/S3.jpg" width="300px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic3"><img class="displayed" src="Scenic/S3.jpg" width="550px"></a>
+             </div>
+                              
+             <div id="s4">
+             <a href="#scenic4" tabindex="-500"><img class="slider" src="Scenic/S4.jpg" width="260px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic4"><img class="displayed" src="Scenic/S4.jpg" width="550px"></a>
+             </div>
+                              
+             <div id="s5">
+             <a href="#scenic5" tabindex="-500"><img class="slider" src="Scenic/S5.jpg" width="320px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic5"><img class="displayed" src="Scenic/S5.jpg" width="550px" ></a>
+             </div>
+                           
+             <div id="s6">
+             <a href="#scenic6" tabindex="-500"><img class="slider" src="Scenic/S6.jpg" width="325px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic6"><img class="displayed" src="Scenic/S6.jpg" width="550px"></a></div>
+                              
+             <div id="s7">
+             <a href="#scenic7" tabindex="-500"><img class="slider" src="Scenic/S7.jpg" width="320px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic7"><img class="displayed" src="Scenic/S7.jpg" width="550px"></a>
+             </div>
+             
+             <div id="s8">
+             <a href="#scenic8" tabindex="-500"><img class="slider" src="Scenic/S8.jpg" width="320px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic8"><img class="displayed" src="Scenic/S8.jpg" width="550px"></a>
+             </div>
+                                
+             <div id="s9">
+             <a href="#scenic9" tabindex="-500"><img class="slider" src="Scenic/S9.jpg" width="220px"></a>
+                                    
+             <a href="#_" class="lightboxv" id="scenic9"><img class="displayed" src="Scenic/S9.jpg" width="367px"></a>
+             </div>
+                                
+             <div id="s10">
+             <a href="#scenic10" tabindex="-500"><img class="slider" src="Scenic/S10.jpg" width="400px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic10"><img class="displayed" src="Scenic/S10.jpg" width="550px" ></a>
+             </div>
+                                
+            <div id="s11">
+            <a href="#scenic11" tabindex="-500"><img class="slider" src="Scenic/S11.jpg" width="400px"></a>
+                                    
+            <a href="#_" class="lightbox" id="scenic11"><img class="displayed" src="Scenic/S11.jpg" width="550px"></a>
+            </div>
+            
+            <div id="s12">
+            <a href="#scenic12" tabindex="-500"><img class="slider" src="Scenic/S12.jpg" width="260px"></a>
+                                    
+            <a href="#_" class="lightbox" id="scenic12"><img class="displayed" src="Scenic/S12.jpg" width="550px"></a>
+            </div>
+                                
+             <div id="s13">
+             <a href="#scenic13" tabindex="-500"><img class="slider" src="Scenic/S13.jpg" width="310px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic13"><img class="displayed" src="Scenic/S13.jpg" width="550px"></a>
+             </div>
+             
+             <div id="s14">
+             <a href="#scenic14" tabindex="-500"><img class="slider" src="Scenic/S14.jpg" width="350px"></a>                                    
+             <a href="#_" class="lightbox" id="scenic14"><img class="displayed" src="Scenic/S14.jpg" width="550px"></a>
+                                </div>
+                                
+             <div id="s15">
+             <a href="#scenic15" tabindex="-500"><img class="slider" src="Scenic/S15.jpg" width="345px"></a>
+                                    
+             <a href="#_" class="lightbox" id="scenic15"><img class="displayed" src="Scenic/S15.jpg" width="550px"></a>
+             </div>
+                                
+             <div id="s16">
+             <a href="#scenic16" tabindex="-500"><img class="slider" src="Scenic/S16.jpg" width="380px"></a>
+                                    
+              <a href="#_" class="lightbox" id="scenic16"><img class="displayed" src="Scenic/S16.jpg" width="550px"></a>
+             </li>
+        	<div class="nav">
+             <label for="img-1" class="prev">&#x2039;</label>
+             <label for="img-3" class="next">&#x203a;</label>
+             </div>
+        </div><!--End of second slide!-->
+        
+        <input type="radio" name="radio-btn" id="img-3">
+        <div class="slidecontainer">
+        <li class="slides" id="misc">
+    
+        <div id="m1">
+        <a href="#misc1" tabindex="-500"><img class="slider" src="Misc/M1.jpg" width="320px"></a>
+                                    
+        <a href="#_" class="lightbox" id="misc1"><img class="displayed" src="Misc/M1.jpg" width="550px"></a>
+       </div>
+                                
+        <div id="m2">
+        <a href="#misc2" tabindex="-500"><img class="slider" src="Misc/M2.jpg" width="225px"></a>
+                                    
+         <a href="#_" class="lightboxv" id="misc2"><img class="displayed" src="Misc/M2.jpg" width="367px"></a>
+         </div>
+                                
+        <div id="m3">
+        <a href="#misc3" tabindex="-500"><img class="slider" src="Misc/M3.jpg" width="380px"></a>
+                                    
+        <a href="#_" class="lightbox" id="misc3"><img class="displayed" src="Misc/M3.jpg" width="550px"></a>
+        </div>
+                               
+        <div id="m4">
+        <a href="#misc4" tabindex="-500"><img class="slider" src="Misc/M4.jpg" width="315px"></a>
+                                    
+        <a href="#_" class="lightboxv" id="misc4"><img class="displayed" src="Misc/M4.jpg" width="367px"></a>
+        </div>
+                                
+        <div id="m5">
+        <a href="#misc5" tabindex="-500"><img class="slider" src="Misc/M5.jpg" width="300px"></a>
+        
+        <a href="#_" class="lightbox" id="misc5"><img class="displayed" src="Misc/M5.jpg" width="550px"></a>
+        </div>
+        
+        <div id="m6">
+        <a href="#misc6" tabindex="-500"><img class="slider" src="Misc/M6.jpg" width="300px"></a>
+        
+        <a href="#_" class="lightbox" id="misc6"><img class="displayed" src="Misc/M6.jpg" width="550px"></a>
+        </div>
+                              
+       <div id="m7">
+       <a href="#misc7" tabindex="-500"><img class="slider" src="Misc/M7.jpg" width="522px"></a>
+                                    
+       <a href="#_" class="lightbox" id="misc7"><img class="displayed" src="Misc/M7.jpg" width="550px"></a>
+       </div>
+                             
+       <div id="m8">
+       <a href="#misc8" tabindex="-500"><img class="slider" src="Misc/M8.jpg" width="315px"></a>
+                                    
+       <a href="#_" class="lightbox" id="misc8"><img class="displayed" src="Misc/M8.jpg" width="550px"></a>
+       </div>
+                               
+       <div id="m9">
+       <a href="#misc9" tabindex="-500"><img class="slider" src="Misc/M9.jpg" width="300px"></a>
+                                    
+       <a href="#_" class="lightbox" id="misc9"><img class="displayed" src="Misc/M9.jpg" width="550px"></a>
+       </div>
+                                
+       <div id="m10">
+       <a href="#misc10" tabindex="-500"><img class="slider" src="Misc/M10.jpg" width="260px"></a>
+                                    
+       <a href="#_" class="lightbox" id="misc10"><img class="displayed" src="Misc/M10.jpg" width="550px"></a>
+       </div>
+                                
+     <div id="m11">
+     <a href="#misc11" tabindex="-500"><img class="slider" src="Misc/M11.jpg" width="400px"></a>
+                                    
+      <a href="#_" class="lightbox" id="misc11"><img class="displayed" src="Misc/M11.jpg" width="550px"></a>
+      </div>
+                                
+     <div id="m12">
+     <a href="#misc12" tabindex="-500"><img class="slider" src="Misc/M12.jpg" width="350px"></a>
+                                    
+      <a href="#_" class="lightbox" id="misc12"><img class="displayed" src="Misc/M12.jpg" width="550px"></a>
+      </div>
+                                
+      <div id="m13">
+      <a href="#misc13" tabindex="-500"><img class="slider" src="Misc/M13.jpg" width="280px"></a>
+                                    
+      <a href="#_" class="lightbox" id="misc13"><img class="displayed" src="Misc/M13.jpg" width="550px"></a>
+      </div>
+                                
+     <div id="m14">
+      <a href="#misc14" tabindex="-500"><img class="slider" src="Misc/M14.jpg" width="280px"></a>
+                                    
+      <a href="#_" class="lightbox" id="misc14"><img class="displayed" src="Misc/M14.jpg" width="550px"></a>
+      </li>
+        	<div class="nav">
+             <label for="img-2" class="prev">&#x2039;</label>
+             <label for="img-1" class="next">&#x203a;</label>
+             </div>
+        </div><!--End of third slide!-->
+        
+        <ul class="nav-dots">
+          <label for="img-1" class="nav-dot" id="imgdot1">concerts</label>
+          <label for="img-2" class="nav-dot" id="imgdot2">scenic</label>
+           <label for="img-3" class="nav-dot" id="imgdot3">misc</label>
+         </ul>
+        </ul><!--Gallery-->
+   </div> <!--Slider-->
+    
+   
+</div> <!--Container-->
+
+</body>
+<script>
+function redirect(number){
+	var given = number;
+	
+	if(given==1){
+		window.location.href = "mailto: alishia.h@hotmail.com";
+		$(document).ready(function(){
+			$("h6").css("opacity","1");
+			$("#title").css("margin-top","-8px")
+		});
+	}
+	
+	else if(given==2){
+		window.open("http://www.twitter.com/_aihsila")
+	}
+	else if(given==3){
+		window.open("http://www.facebook.com/alishiaphotog")
+	}
+	else{
+	}
+}
+
+</script>
+<script src="http://static.freewebs.getclicky.com/85260974.js" type="text/javascript"></script>
+<noscript><img alt="Clicky" src="http://in.freewebs.getclicky.com/85260974-fwdb2.gif" /></noscript>
+</html>
