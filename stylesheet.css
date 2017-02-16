@@ -19,7 +19,7 @@
 
 @font-face{
 	font-family: cabin;
-	src: url('bold.ttf');
+	src: url('Cabin-SemiBold.otf');
 }
 
 body{
@@ -72,7 +72,7 @@ body{
 	top: 6px;
 	right: 11%;
 	margin: 0;
-	font-size: 25px;
+	font-size: 20px;
 	letter-spacing: 1px;
 	z-index: 1000;
 	text-transform: uppercase;
