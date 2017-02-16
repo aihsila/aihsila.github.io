@@ -25,7 +25,7 @@
 body{
 	margin: 0px;
 	padding: 0px;
-	font-family: fineliner;
+	font-family: cabin;
    	background-color: #FFF;
 }
 
@@ -1176,7 +1176,7 @@ body{
 	height: 50px;
 	padding-top: 25px;
 	color: #FFF;
-	font-family: fineliner;
+	font-family: cabin;
 	font-size: 30px;
 	background-color: rgba(0,0,0,0.95)/*rgba(107,177,99,1)*/;
 	border-left-style: none;
@@ -1209,7 +1209,7 @@ body{
 	font-size: 35px;
 	z-index: 30;
     vertical-align: bottom;
-	font-family: fineliner;
+	font-family: cabin;
 }
 
 #navtitle a{
@@ -1225,7 +1225,7 @@ body{
 	background-color: rgba(0,0,0, 0.9);
 	left: 0px;
 	top: 76px;
-	font-family: fineliner;
+	font-family: cabin;
 }
 
 #mpanel a{
@@ -1281,10 +1281,11 @@ body{
 h5{
 	display: inline-block;
     vertical-align: bottom;
-	font-size: 25;
+	font-size: 15px !important;
 	margin: 0px;
     position: relative;
-    top: 3px;
+	text-transform: uppercase;
+    top: 5px;
 }
 
 
@@ -1599,11 +1600,9 @@ h5{
 	padding: 0px;
 	position: relative;
 	left: 0;
-	top: 15px;
+	top: 12px;
 	padding-right: 10px;
 	z-index: 8;
-	text-transform: uppercase;
-	font-size: 18px;
 }
 
 
