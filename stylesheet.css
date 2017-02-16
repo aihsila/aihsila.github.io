@@ -2378,9 +2378,13 @@ margin: 0 auto !important;
 	left: 1130px;
 }
 
+.nav-dots {
+left: 0px;	
+	}
+	
 .nav-dots .nav-dot{
 	position: relative;
-	left: 500px;
+	left: 400px;
 }
 
 #g1{
